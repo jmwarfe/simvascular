@@ -17,6 +17,8 @@ WORKDIR /code
 # Prepare for install, file shouldn't have "sudo" hard-coded in it
 RUN git clone https://github.com/SimVascular/svSolver.git && \
     cd svSolver/BuildWithMake && \
+    rm -rf quick-build-linux.sh && \
+    wget https://github.com/jmwarfe/simvascular/raw/master/quick-build-linux.sh && \
     /bin/bash quick-build-linux.sh
 
 # Install some version of open MPI https://www.open-mpi.org/software/ompi/v4.0/

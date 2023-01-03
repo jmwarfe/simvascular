@@ -31,4 +31,5 @@ RUN wget https://download.open-mpi.org/release/open-mpi/v4.1/openmpi-4.1.4.tar.g
 
 # Binaries (with .exe extensions?) are here
 ENV PATH /code/svSolver/BuildWithMake/Bin:$PATH
+ENV LD_LIBRARY_PATH $LD_LIBRARY_PATH:/code/openmpi-1.10.7/orte/.libs/:/code/openmpi-1.10.7/opal/.libs/
 ENTRYPOINT ["svsolver-nompi.exe"]
